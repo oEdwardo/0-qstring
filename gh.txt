@@ -1,0 +1,1 @@
+git@github.com:oEdwardo/0-qstring.git
