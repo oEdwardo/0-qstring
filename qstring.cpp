@@ -1,29 +1,41 @@
 #include <Arduino.h>
 
+#include "qstring.h"
 
 //	String q_string;
-int args_num[];
-String *args[];
-String *values[];
-
-
-void qstring()
+/*
+class qstring
 {
+  public:
+	String qstring_str;
+	String args_arr[MAX_ARGS];
+	String args_val[MAX_ARGS];
+
+	qstring();
+
+    void get_args(String *str);
+    String get_arg(String arg_name);
+    bool has_arg(String arg_name);
+};
+*/
+
+
+qstring::qstring()
+{
+  memset(this, 0, sizeof(qstring));
 }
+
 
 void qstring::get_args(String *str)
 {
-	q_string= str;
-
-
 }
 
-String qstring::arg(String arg_name);
+String qstring::get_arg(String arg_name)
 {
+	return arg_name;
 }
 
-bool qstring::hasArg(String arg_name);
+bool qstring::has_arg(String arg_name)
 {
+	return 0;
 }
-
-

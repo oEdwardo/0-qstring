@@ -6,71 +6,36 @@
  *  server_ip is the IP address of the ESP8266 module, will be 
  *  printed to Serial when the module is connected.
  */
+/*
+class qstring
+{
+  public:
+	String qstring_str;
+	String args_arr[MAX_ARGS];
+	String args_val[MAX_ARGS];
 
+	qstring();
+
+    void get_args(String *str);
+    String get_arg(String arg_name);
+    bool has_arg(String arg_name);
+};
+*/
+
+#include <Arduino.h>
+#include "qstring.h"
+
+qstring qs_o;
 
 float f_val = 123.6794;
-char in_str[]="// GET /?q=1&w=2 HTTP/1.1";
-char outstr[15];
+String in_str="// GET /?q=1&w=2 HTTP/1.1";
 int start_ind;
-String qs_parts[];
 
 void setup() 
 {
 	Serial.begin(9600);
 
-	q_string= str;
-
-	start_ind= q_string.indexOf("/?")+2;
-	serial.println(start_ind);
-
-
-	next_splitter= start_ind-1;
-
-	do
-	{	last_splitter= next_splitter;
-
-		next_splitter= q_string.indexOf("&", start_ind);
-		serial.println(start_ind);
-
-	}
-	while(next_splitter>=0);
-//возвращает -1, если не найдено
-//charAt() 
-
-	part= q_string.substring(last_splitter+1, next_splitter-last_splitter+1+);
-	serial.println(part);
-
-
-/*  _currentVersion = atoi(versionEnd.c_str());
-
-	
-	
-
-	f_val= 12.345;  
-	dtostrf(f_val,5, 2, outstr);
-	Serial.println(outstr);
-
-	f_val= 2.345;  
-	dtostrf(f_val,5, 2, outstr);
-	Serial.println(outstr);
-
-	f_val= 0;  
-	dtostrf(f_val,5, 2, outstr);
-	Serial.println(outstr);
-
-	f_val= -2.345;  
-	dtostrf(f_val,5, 2, outstr);
-	Serial.println(outstr);
-
-	f_val= -12.345;  
-	dtostrf(f_val,5, 2, outstr);
-	Serial.println(outstr);
-
-	q= String(outstr) +"qwe";
-	q.trim();
-	Serial.println(q);
-*/
-
+	qs_o.get_args(&in_str);
 }
 
 

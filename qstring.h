@@ -1,5 +1,5 @@
-#ifndef qstring_h
-#define qstring_h
+#ifndef QSTRING_H
+#define QSTRING_H
 
 #include <stdint.h>
 
@@ -8,18 +8,22 @@
 //#else
 //#include "WProgram.h"      // for delayMicroseconds
 //#include "pins_arduino.h"  // for digitalPinToBitMask, etc
-#endif
+//#endif
 
-class qstring
-{
+#define MAX_ARGS 10
+
+class qstring {
   public:
-	String qstring_str;
-
 	qstring();
+	
+	String qstring_str;
+	String args_name[MAX_ARGS];
+	String args_val[MAX_ARGS];
 
-    void get_args(String *str);
-    String arg(String arg_name);
-    bool hasArg(String arg_name);
+
+
+    void get_args(String *str); // fills args_name/args_val
+    String get_arg(String arg_name); // from int arr
+    bool has_arg(String arg_name); // from int arr
 };
-
-#endif // qstring_h
+#endif // QSTRING_H
