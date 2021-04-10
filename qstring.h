@@ -20,9 +20,9 @@ class qstring {
 	String args_name[MAX_ARGS];
 	String args_val[MAX_ARGS];
 
+	int args_cnt;
 
-
-    void get_args(String *str); // fills args_name/args_val
+    void get_args(String* str); // fills args_name/args_val
     String get_arg(String arg_name); // from int arr
     bool has_arg(String arg_name); // from int arr
 };
